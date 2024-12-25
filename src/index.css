@@ -78,6 +78,7 @@
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
 }
 .create label {
   text-align: left;
