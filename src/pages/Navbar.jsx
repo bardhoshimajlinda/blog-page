@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import dark from "./../assets/moon.png";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <div className="navbar">
       <Link className="link" to="/">
-        <h1>My blog</h1>
+        <h1>My Blog</h1>
       </Link>
       <div className="links">
-        <img src={dark} style={{ height: "35px", paddingTop: "20px" }} />
         <Link className="link" to="/">
           Home
         </Link>
         <Link className="link" to="/create">
-          New blog
+          New Blog
         </Link>
       </div>
+      <button
+        onClick={toggleTheme}
+        className="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        {isDarkMode ? "🌞" : "🌚"}
+      </button>
     </div>
   );
 };

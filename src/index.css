@@ -5,6 +5,10 @@
   font-family: "Quicksand";
   color: #333;
 }
+body {
+  background-color: #ffffff;
+  color: #333;
+}
 .navbar {
   padding: 20px;
   display: flex;
@@ -22,7 +26,7 @@
 .navbar .link {
   margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
+  padding: 16px;
 }
 .navbar .link:hover {
   color: #c23317;
@@ -115,4 +119,79 @@
 .not-found a {
   text-decoration: none;
   color: #c23317;
+}
+
+/* dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #d4d4d4;
+}
+
+body.dark-mode .navbar {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+body.dark-mode .navbar h1 {
+  color: #a6300b;
+}
+
+body.dark-mode .navbar .link {
+  color: #d4d4d4;
+}
+
+body.dark-mode .navbar .link:hover {
+  color: #a6300b;
+}
+
+body.dark-mode .blog-preview {
+  border-bottom: 1px solid #25232330;
+}
+
+body.dark-mode .blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .blog-preview h2 {
+  color: #a6300b;
+}
+
+body.dark-mode .create input,
+body.dark-mode .create textarea,
+body.dark-mode .create select {
+  background-color: #2a2a2a;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+}
+
+body.dark-mode .create input::placeholder,
+body.dark-mode .create textarea::placeholder {
+  color: #ac7979;
+}
+
+body.dark-mode .create button {
+  background: #a6300b;
+  color: #121212;
+}
+
+body.dark-mode .blog-details button {
+  background: #a6300b;
+  color: #121212;
+}
+
+body.dark-mode .not-found a {
+  color: #a6300b;
+}
+
+body.dark-mode .not-found a:hover {
+  color: #a6300b;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+}
+.theme-toggle:hover {
+  opacity: 0.8;
 }

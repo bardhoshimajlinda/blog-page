@@ -47,7 +47,7 @@ const Create = () => {
           type="text"
           required
           value={author}
-          onChan={(e) => setAuthor(e.target.value)}
+          onChange={(e) => setAuthor(e.target.value)}
         />
         {!isPending && <button>Add blog</button>}
         {isPending && <button disabled>Adding blog...</button>}
