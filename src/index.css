@@ -16,7 +16,10 @@ body {
   max-width: 800px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  background-color: #f2f2f23f;
+  border-radius: 10px;
 }
+
 .navbar h1 {
   color: #c23317;
 }
@@ -53,10 +56,16 @@ body {
   text-decoration: none;
 }
 .footer {
-  max-width: 150px;
-  margin: 150px auto;
+  text-align: center;
   padding: 20px;
+  background-color: #f2f2f29a;
+  color: #333333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.034);
 }
+
 .blog-details {
   max-width: 700px;
   margin: 40px auto;
