@@ -56,7 +56,7 @@ body {
 }
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   background-color: #f2f2f29a;
   color: #333333;
   position: fixed;
@@ -208,6 +208,12 @@ body.dark-mode .footer {
   color: #f4f4f4;
 }
 
+body.dark-mode .blog-list input {
+  background-color: #2a2a2a;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+}
+
 /* responsive styles */
 @media (max-width: 768px) {
   .navbar {
@@ -232,11 +238,6 @@ body.dark-mode .footer {
   .create {
     max-width: 90%;
     padding: 10px;
-  }
-
-  .footer {
-    padding: 10px;
-    font-size: 14px;
   }
 
   .blog-preview h2 {

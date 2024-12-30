@@ -32,12 +32,14 @@ const Create = () => {
         <label>Blog title:</label>
         <input
           type="text"
+          placeholder="Title"
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <label>Blog body: </label>
         <textarea
+          placeholder="Body"
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
@@ -45,6 +47,7 @@ const Create = () => {
         <label>Blog author:</label>
         <input
           type="text"
+          placeholder="Author"
           required
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
