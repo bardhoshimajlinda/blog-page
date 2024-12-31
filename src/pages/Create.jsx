@@ -10,14 +10,19 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = {
+      title,
+      body,
+      author,
+      date: new Date().toLocaleDateString(),
+    };
 
     setIsPending(true);
 
     fetch("http://localhost:8000/blogs", {
       method: "POST",
-      headers: { "Content-Type": "application/json" }, //type of the data we are sending, json
-      body: JSON.stringify(blog), //we have the turn it from an object to a json string
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blog),
     }).then(() => {
       console.log("new blog added");
       setIsPending(false);

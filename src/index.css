@@ -54,6 +54,13 @@ body {
 .blog-preview a {
   text-decoration: none;
 }
+.blog-preview small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+
 .footer {
   text-align: center;
   padding: 15px;
