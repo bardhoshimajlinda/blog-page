@@ -136,6 +136,16 @@ body {
   color: #c23317;
 }
 
+.no-blogs button {
+  margin-top: 15px;
+  background: #b12851c7;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* dark mode */
 body.dark-mode {
   background-color: #121212;
@@ -183,7 +193,8 @@ body.dark-mode .create textarea::placeholder {
   color: #ac7979;
 }
 
-body.dark-mode .create button {
+body.dark-mode .create button,
+body.dark-mode .no-blogs button {
   background: #a6300b;
   color: #121212;
 }

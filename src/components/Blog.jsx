@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
 
 const Blog = ({ blogs, title }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const filteredBlogs = useMemo(() => {
     return blogs.filter(
@@ -31,18 +32,27 @@ const Blog = ({ blogs, title }) => {
         }}
       />
 
-      {filteredBlogs.map((blog) => (
-        <div className="blog-preview" key={blog.id}>
-          <Link to={`blogs/${blog.id}`}>
-            <h2>{blog.title}</h2>
-            <p>Written by {blog.author}</p>
-            {blog.date && <small>Created on: {blog.date}</small>}
-          </Link>
+      {blogs.length === 0 ? (
+        <div className="no-blogs">
+          <p>No blogs yet. Create your first blog!</p>
+          <button onClick={() => navigate("/create")}>Create a Blog</button>
         </div>
-      ))}
+      ) : (
+        <>
+          {filteredBlogs.map((blog) => (
+            <div className="blog-preview" key={blog.id}>
+              <Link to={`blogs/${blog.id}`}>
+                <h2>{blog.title}</h2>
+                <p>Written by {blog.author}</p>
+                {blog.date && <small>Created on: {blog.date}</small>}
+              </Link>
+            </div>
+          ))}
 
-      {filteredBlogs.length === 0 && (
-        <p>No blogs found matching your search.</p>
+          {filteredBlogs.length === 0 && (
+            <p>No blogs found matching your search.</p>
+          )}
+        </>
       )}
     </div>
   );

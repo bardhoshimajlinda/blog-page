@@ -14,7 +14,12 @@ const Create = () => {
       title,
       body,
       author,
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
     };
 
     setIsPending(true);
