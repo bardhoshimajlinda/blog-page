@@ -3,6 +3,8 @@ import { useState, useMemo } from "react";
 
 const Blog = ({ blogs, title }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 5;
   const navigate = useNavigate();
 
   const filteredBlogs = useMemo(() => {
@@ -12,6 +14,13 @@ const Blog = ({ blogs, title }) => {
         blog.author.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }, [blogs, searchQuery]);
+
+  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
+  const startIndex = (currentPage - 1) * blogsPerPage;
+  const paginatedBlogs = filteredBlogs.slice(
+    startIndex,
+    startIndex + blogsPerPage
+  );
 
   return (
     <div className="blog-list">
@@ -39,7 +48,7 @@ const Blog = ({ blogs, title }) => {
         </div>
       ) : (
         <>
-          {filteredBlogs.map((blog) => (
+          {paginatedBlogs.map((blog) => (
             <div className="blog-preview" key={blog.id}>
               <Link to={`blogs/${blog.id}`}>
                 <h2>{blog.title}</h2>
@@ -49,9 +58,27 @@ const Blog = ({ blogs, title }) => {
             </div>
           ))}
 
-          {filteredBlogs.length === 0 && (
+          {paginatedBlogs.length === 0 && (
             <p>No blogs found matching your search.</p>
           )}
+
+          <div className="pagination">
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((prev) => prev - 1)}
+            >
+              Previous
+            </button>
+            <span>
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((prev) => prev + 1)}
+            >
+              Next
+            </button>
+          </div>
         </>
       )}
     </div>
