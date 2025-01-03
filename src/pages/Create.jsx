@@ -5,8 +5,18 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +30,7 @@ const Create = () => {
         month: "long",
         day: "numeric",
       }),
+      image: preview,
     };
 
     setIsPending(true);
@@ -29,7 +40,7 @@ const Create = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     }).then(() => {
-      console.log("new blog added");
+      console.log("New blog added");
       setIsPending(false);
       navigate("/");
     });
@@ -37,9 +48,9 @@ const Create = () => {
 
   return (
     <div className="create">
-      <h2>Add a new blog</h2>
+      <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
-        <label>Blog title:</label>
+        <label>Blog Title:</label>
         <input
           type="text"
           placeholder="Title"
@@ -47,14 +58,14 @@ const Create = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Blog body: </label>
+        <label>Blog Body: </label>
         <textarea
           placeholder="Body"
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
-        <label>Blog author:</label>
+        <label>Blog Author:</label>
         <input
           type="text"
           placeholder="Author"
@@ -62,8 +73,15 @@ const Create = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        {!isPending && <button>Add blog</button>}
-        {isPending && <button disabled>Adding blog...</button>}
+        <label>Upload Photo:</label>
+        <input type="file" accept="image/*" onChange={handleImageChange} />
+        {preview && (
+          <div className="image-preview">
+            <img src={preview} alt="Preview" style={{ width: "100%" }} />
+          </div>
+        )}
+        {!isPending && <button>Add Blog</button>}
+        {isPending && <button disabled>Adding Blog...</button>}
       </form>
     </div>
   );
