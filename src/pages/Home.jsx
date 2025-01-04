@@ -1,6 +1,7 @@
 import React from "react";
 import Blog from "../components/Blog";
 import useFetch from "../hooks/useFetch";
+import BackToTopButton from "../components/BackToTopButton";
 
 const Home = () => {
   const {
@@ -10,11 +11,13 @@ const Home = () => {
   } = useFetch("http://localhost:8000/blogs");
 
   return (
-    <div className="content">
-      {error && <p>{error}</p>}
-      {isPending && <div>Loading..</div>}
-      {blogs && <Blog blogs={blogs} title="All Blogs" />}
-    </div>
+    <>
+      <div className="content">
+        {error && <p>{error}</p>}
+        {isPending && <div>Loading..</div>}
+        {blogs && <Blog blogs={blogs} title="All Blogs" />}
+      </div>
+    </>
   );
 };
 

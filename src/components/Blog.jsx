@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useMemo } from "react";
+import BackToTopButton from "./BackToTopButton";
 
 const Blog = ({ blogs, title }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -79,6 +80,7 @@ const Blog = ({ blogs, title }) => {
               Next
             </button>
           </div>
+          <BackToTopButton />
         </>
       )}
     </div>
