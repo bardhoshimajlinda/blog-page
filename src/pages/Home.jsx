@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <div className="content">
         {error && <p>{error}</p>}
-        {isPending && <div>Loading..</div>}
+        {isPending && <div className="spinner"></div>}
         {blogs && <Blog blogs={blogs} title="All Blogs" />}
       </div>
     </>

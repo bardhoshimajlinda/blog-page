@@ -5,42 +5,48 @@
       "title": "The Journey to Minimalism",
       "body": "Have you ever felt overwhelmed by the clutter in your life? I decided to embrace minimalism a few years ago, and it has been a transformative journey. Focusing only on the essentials allows me more time, energy, and joy in everyday life. In this blog, I’ll share five simple tips to start your journey to minimalism.",
       "author": "Mario",
-      "date": "1/1/2025"
+      "date": "Wednesday, January 1, 2025",
+      "category": "Lifestyle"
     },
     {
       "id": "71m6",
       "title": "The Magic of Morning Routines",
       "body": "Your morning sets the tone for the rest of your day. My secret to productivity and happiness has been a structured and mindful morning routine. From meditation to a healthy breakfast, this blog explores how small changes in the morning can make a big difference in your life.",
       "author": "Majli",
-      "date": "Wednesday, January 1, 2025"
+      "date": "Wednesday, January 1, 2025",
+      "category": "Lifestyle"
     },
     {
       "id": "e6qd",
       "title": "Exploring the Hidden Gems of Italy",
       "body": "Italy is known for its iconic landmarks, but some of its true beauty lies in the lesser-known destinations. From the quaint village of Alberobello to the serene Lake Orta, this blog takes you on a journey to discover the hidden gems of Italy. Perfect for travelers seeking unique and unforgettable experiences.",
       "author": "Luca",
-      "date": "Wednesday, January 1, 2025"
+      "date": "Wednesday, January 1, 2025",
+      "category": "Travel"
     },
     {
       "id": "e690",
-      "title": "1",
-      "body": "body",
-      "author": "me",
-      "date": "Thursday, January 2, 2025"
+      "title": "Introduction to JavaScript",
+      "body": "JavaScript is the backbone of modern web development. With its flexibility and power, you can build anything from simple websites to complex applications.",
+      "author": "John",
+      "date": "Thursday, January 2, 2025",
+      "category": "Technology"
     },
     {
       "id": "2410",
-      "title": "2",
-      "body": "boody",
-      "author": "me",
-      "date": "Thursday, January 2, 2025"
+      "title": "Understanding React",
+      "body": "React is a powerful JavaScript library for building user interfaces. It allows developers to create reusable components that make coding efficient and scalable.",
+      "author": "Alice",
+      "date": "Thursday, January 2, 2025",
+      "category": "Technology"
     },
     {
       "id": "f47d",
-      "title": "3",
-      "body": "d",
-      "author": "me",
-      "date": "Thursday, January 2, 2025"
+      "title": "CSS Tips and Tricks",
+      "body": "CSS is the language that styles the web. Learning tips like flexbox, grid layouts, and responsive design will help you create beautiful websites.",
+      "author": "Maria",
+      "date": "Thursday, January 2, 2025",
+      "category": "Technology"
     },
     {
       "id": "24d9",
@@ -48,7 +54,16 @@
       "body": "Have you ever been so excited to go home because the book you started last night, which kept you awake until early in the morning, is waiting for you to come back from work and pick it up where you left it. Living like this give me the opportunity to have a lovely slow LIFE after work, yeah maybe not totally mine.",
       "author": "Blue",
       "date": "Friday, January 3, 2025",
-      "image": "blob:http://localhost:5173/5f4de2fe-efc0-4770-8557-0b0b040374a7"
+      "image": "blob:http://localhost:5173/5f4de2fe-efc0-4770-8557-0b0b040374a7",
+      "category": "Personal"
+    },
+    {
+      "id": "24dw",
+      "title": "The Future of Web Development",
+      "body": "The web development landscape is always changing. Technologies like AI, WebAssembly, and serverless architectures are shaping the future.",
+      "author": "David Kim",
+      "date": "Thursday, January 2, 2025",
+      "category": "Technology"
     }
   ]
 }

@@ -6,6 +6,7 @@ const Create = () => {
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState(null);
+  const [category, setCategory] = useState("");
   const [preview, setPreview] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const Create = () => {
       title,
       body,
       author,
+      category,
       date: new Date().toLocaleDateString("en-US", {
         weekday: "long",
         year: "numeric",
@@ -73,6 +75,18 @@ const Create = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
+        <label>Category:</label>
+        <select
+          required
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">-- Select a Category --</option>
+          <option value="Technology">Technology</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Education">Education</option>
+          <option value="Entertainment">Entertainment</option>
+        </select>
         <label>Upload Photo:</label>
         <input type="file" accept="image/*" onChange={handleImageChange} />
         {preview && (

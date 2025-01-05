@@ -13,20 +13,23 @@ const BlogDetails = () => {
   } = useFetch("http://localhost:8000/blogs/" + id);
 
   const handleClick = () => {
-    fetch("http://localhost:8000/blogs/" + blog.id, {
-      method: "DELETE",
-    }).then(() => {
-      navigate("/");
-    });
+    if (window.confirm("Are you sure you want to delete this blog?")) {
+      fetch("http://localhost:8000/blogs/" + blog.id, {
+        method: "DELETE",
+      }).then(() => navigate("/"));
+    }
   };
 
   return (
     <div className="blog-details">
-      {isPending && <div>Loading...</div>}
+      {isPending && <div className="spinner"></div>}
       {error && <div>{error}</div>}
       {blog && (
         <article>
           <h2>{blog.title}</h2>
+          <p>
+            <strong>Category:</strong> {blog.category}
+          </p>
           <p>Written by {blog.author}</p>
           {blog.image && (
             <img src={blog.image} alt={blog.title} className="blog-image" />

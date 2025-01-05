@@ -53,6 +53,9 @@ const Blog = ({ blogs, title }) => {
             <div className="blog-preview" key={blog.id}>
               <Link to={`blogs/${blog.id}`}>
                 <h2>{blog.title}</h2>
+                <p>
+                  <strong>Category:</strong> {blog.category}
+                </p>
                 <p>Written by {blog.author}</p>
                 {blog.date && <small>Created on: {blog.date}</small>}
               </Link>
