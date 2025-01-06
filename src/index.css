@@ -2,13 +2,13 @@
 
 * {
   margin: 0;
-  font-family: "Quicksand";
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
   color: #333;
 }
-html,
 body {
   height: 100%;
-  margin: 0;
 }
 .main-layout {
   display: flex;
@@ -32,7 +32,6 @@ body {
 .navbar {
   padding: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
@@ -119,7 +118,8 @@ body {
 }
 .create input,
 .create textarea,
-.create select {
+.create select,
+.blog-list select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -283,6 +283,7 @@ body.dark-mode .blog-preview h2 {
 body.dark-mode .create input,
 body.dark-mode .create textarea,
 body.dark-mode .create select,
+body.dark-mode .blog-list select,
 body.dark-mode .create input[type="file"] {
   background-color: #2a2a2a;
   color: #d4d4d4;

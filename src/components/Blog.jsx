@@ -4,17 +4,22 @@ import BackToTopButton from "./BackToTopButton";
 
 const Blog = ({ blogs, title }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 5;
   const navigate = useNavigate();
 
   const filteredBlogs = useMemo(() => {
-    return blogs.filter(
-      (blog) =>
+    return blogs.filter((blog) => {
+      const matchesSearch =
         blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        blog.author.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [blogs, searchQuery]);
+        blog.author.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory =
+        selectedCategory === "" || blog.category === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+  }, [blogs, searchQuery, selectedCategory]);
 
   const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
   const startIndex = (currentPage - 1) * blogsPerPage;
@@ -42,6 +47,24 @@ const Blog = ({ blogs, title }) => {
         }}
       />
 
+      <select
+        value={selectedCategory}
+        onChange={(e) => setSelectedCategory(e.target.value)}
+        style={{
+          marginBottom: "20px",
+          padding: "8px",
+          width: "100%",
+          borderRadius: "4px",
+          border: "1px solid #ddd",
+        }}
+      >
+        <option value="">All Categories</option>
+        <option value="Technology">Technology</option>
+        <option value="Lifestyle">Lifestyle</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+      </select>
+
       {blogs.length === 0 ? (
         <div className="no-blogs">
           <p>No blogs yet. Create your first blog!</p>
@@ -63,7 +86,9 @@ const Blog = ({ blogs, title }) => {
           ))}
 
           {paginatedBlogs.length === 0 && (
-            <p>No blogs found matching your search.</p>
+            <p style={{ color: "#c23317" }}>
+              No blogs found matching your search or category.
+            </p>
           )}
 
           <div className="pagination">
